@@ -10,6 +10,7 @@ from pgoapi.exceptions import AuthException
 import pprint
 import time
 import threading
+import sys
 
 def accept_tos(username, password):
 	api = PGoApi()
@@ -22,4 +23,4 @@ def accept_tos(username, password):
 	print('Accepted Terms of Service for {}'.format(username))
 	#print('Response dictionary: \r\n{}'.format(pprint.PrettyPrinter(indent=4).pformat(response)))
 
-accept_tos('username', 'password')
+accept_tos(sys.argv[1], sys.argv[2])
